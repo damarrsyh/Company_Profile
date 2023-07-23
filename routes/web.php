@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SummaryController;
@@ -80,6 +81,16 @@ Route::prefix('news')->group(function () {
     Route::get('/edit/{id}', [NewsController::class, 'edit'])->middleware('auth');
     Route::post('/update/{id}', [NewsController::class, 'update']);
     Route::post('/destroy/{id}', [NewsController::class, 'destroy']);
+});
+
+Route::prefix('branch')->group(function () {
+    Route::get('/index/{id}', [BranchController::class, 'index']);
+    Route::get('/aindex', [BranchController::class, 'aindex'])->middleware('auth');
+    Route::get('/create', [BranchController::class, 'create'])->middleware('auth');
+    Route::post('/store', [BranchController::class, 'store']);
+    Route::get('/edit/{id}', [BranchController::class, 'edit'])->middleware('auth');
+    Route::post('/update/{id}', [BranchController::class, 'update']);
+    Route::post('/destroy/{id}', [BranchController::class, 'destroy']);
 });
 
 Route::prefix('dashboard')->group(function () {

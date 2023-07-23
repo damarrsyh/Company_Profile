@@ -11,9 +11,12 @@
 <!-- Bootstrap Icons-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 <!-- Google fonts-->
-<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+{{-- <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-    rel="stylesheet" type="text/css" />
+    rel="stylesheet" type="text/css" /> --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 <!-- SimpleLightbox plugin CSS-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
@@ -85,7 +88,6 @@
     <!-- Content -->
     
     <!-- Summary -->
-
     <section class="page-section">
         <div class="container-fluid ms-auto">
             <div class="row g-0" data-aos="fade-in" data-aos-duration="1000">
@@ -104,8 +106,35 @@
             </div>
         </div>
     </section>
-
     <!--End summary-->
+
+    <!-- Branch -->
+    <section class="page-section">
+
+        <div class="container-fluid">
+            <div class="row g-0 justify-content-center" data-aos="fade-in" data-aos-duration="1000">
+                @foreach ($branches as $branch)
+                <div class="col hov mx-1 my-3 text-start bg-light" style="border-radius: 15px;">
+                    <div class="my-5 px-4  hov-1">
+                        <h3 class="mb-2 fw-bold text-center text-uppercase">{{ $branch->name }}</h3>
+                        <hr class="divider">
+                        <small class="text-secondary">Member</small>
+                        <h5 class="mb-2 fw-bold">{{ $branch->total_member }}</h5>
+                        <small class="text-secondary">Outstanding</small>
+                        <h5 class="mb-2 fw-bold">@currency($branch->outstanding)</h3>
+                        <small class="text-secondary">PAR</small>
+                        <h5 class="mb-4 fw-bold">{{ $branch->par }} %</h5>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Detail</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!--End Branch-->
 
     <!-- Gallery -->
     <section class="page-section" id="portfolio">
