@@ -53,8 +53,8 @@ class OutstandingSeeder extends Seeder
             array("description" => " KSP MUM ", "main" => 1487868335, "margin" => 446270500, "member" => " 713 ", "branch_id" => " 9 "),
             array("description" => " BPRS BOTANI ", "main" => 511290000, "margin" => 136692000, "member" => " 453 ", "branch_id" => " 10 "),
             array("description" => " KSP MUM ", "main" => 112862400, "margin" => 31473360, "member" => " 95 ", "branch_id" => " 10 "),
-            array("description" => " BPRS BUANA MITRA ", "main" => 31080000, "margin" => 9324000, "member" => " 28 ", "branch_id" => " 1 "),
-            array("description" => " KSP MUM ", "main" => 250640000, "margin" => 68436000, "member" => " 205 ", "branch_id" => " 1"),
+            array("description" => " BPRS BUANA MITRA ", "main" => 31080000, "margin" => 9324000, "member" => " 28 ", "branch_id" => " 11 "),
+            array("description" => " KSP MUM ", "main" => 250640000, "margin" => 68436000, "member" => " 205 ", "branch_id" => " 11"),
         );
 
         foreach ($array as $outstanding) {

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("name");
             $table->integer("total_member");
             $table->decimal("total_equity", 15, 2);
+            $table->decimal("mum_profit", 15, 2);
+            $table->decimal("financier_profit", 15, 2);
             $table->timestamps();
         });
     }

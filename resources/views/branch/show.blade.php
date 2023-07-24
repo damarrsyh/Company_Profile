@@ -74,21 +74,39 @@
               </div>
             </div>
             <div class="card-body">
-              <div>
-                <small>Total Member</small>
-                <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
-                  @thousand($branch->total_member)
-                </h3>
+              <div class="row">
+                <div class="col">
+                  <small>Total Member</small>
+                  <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
+                    @thousand($branch->total_member)
+                  </h3>
+                </div>
+                <div class="col">
+                  <small>MUM Profit</small>
+                  <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
+                    Rp. @thousand($branch->mum_profit)
+                  </h3>
+                </div>
               </div>
               <div class="mb-5">
-                <small>Total Equity</small>
-                <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
-                  @thousand($branch->total_equity)
-                </h3>
+                <div class="row">
+                  <div class="col">
+                    <small>Total Equity</small>
+                    <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
+                      Rp. @thousand($branch->total_equity)
+                    </h3>
+                  </div>
+                  <div class="col">
+                    <small>Financier Profit</small>
+                    <h3 class="card-title text-uppercase" style="letter-spacing: 2px">
+                      Rp. @thousand($branch->financier_profit)
+                    </h3>
+                  </div>
+                </div>
               </div>
 
               <div class="mb-5">
-                <h5>Outstanding & Margin</h5>
+                <h5>Outstanding</h5>
 
                 <table class="table table-bordered text-center">
                   <thead>
