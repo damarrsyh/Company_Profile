@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Summary;
 use App\Models\Header;
+use App\Models\Repayment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -21,6 +22,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            BranchSeeder::class,
+            OutstandingSeeder::class,
+            RepaymentSeeder::class,
+            ParSeeder::class,
+        ]);
         User::create([
             'username' => 'Admin',
             'email' => 'admin@gmail.com',
@@ -38,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Cabang',
             'jumlah' => '12',
             'image' => 'summary/3.png',
-            
+
         ]);
         Summary::create([
             'nama' => 'Anggota',

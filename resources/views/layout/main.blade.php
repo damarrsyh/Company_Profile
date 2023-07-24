@@ -119,18 +119,16 @@
                         <h3 class="mb-2 fw-bold text-center text-uppercase">{{ $branch->name }}</h3>
                         <hr class="divider">
                         <small class="text-secondary">Member</small>
-                        <h5 class="mb-2 fw-bold">{{ $branch->total_member }}</h5>
-                        <small class="text-secondary">Outstanding</small>
-                        <h5 class="mb-2 fw-bold">@currency($branch->outstanding)</h3>
-                        <small class="text-secondary">PAR</small>
-                        <h5 class="mb-4 fw-bold">{{ $branch->par }} %</h5>
-                        <div class="text-center">
-                            <button class="btn btn-primary">Detail</button>
-                        </div>
+                        <h5 class="mb-2 fw-bold">@thousand($branch->total_member)</h5>
+                        <small class="text-secondary">Total Equity</small>
+                        <h5 class="mb-2 fw-bold">Rp @thousand($branch->total_equity)</h3>
+                        
                     </div>
-                    
                 </div>
                 @endforeach
+                <div class="text-center mt-2">
+                    <a href="/branch/index" class="btn btn-primary px-5 py-2 rounded-pill">More</a>
+                </div>
             </div>
         </div>
     </section>

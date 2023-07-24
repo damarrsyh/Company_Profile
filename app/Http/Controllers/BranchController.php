@@ -12,10 +12,14 @@ class BranchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return view("branch.index", ['branches' => Branch::with(['outstanding', 'repayment', 'par'])->get()]);
+    }
+
     public function aindex()
     {
-        $branches = Branch::all();
-        return view("branch.aindex", ['branches' => $branches]);
+        return view("branch.aindex", ['branches' => Branch::with(['outstanding', 'repayment', 'par'])->get()]);
     }
 
     /**
@@ -55,7 +59,9 @@ class BranchController extends Controller
      */
     public function show($id)
     {
-        //
+        return view("branch.show", [
+            'branch' => Branch::with(['outstanding', 'repayment', 'par'])->where("id", $id)->first()
+        ]);
     }
 
     /**

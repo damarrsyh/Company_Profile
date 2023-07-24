@@ -21,7 +21,7 @@ class HomeController extends Controller
             'branches' => Branch::limit(4)->get(),
             'galleries' => Gallery::all(),
             'article' => Article::all(),
-            'news' => News::all(),  
+            'news' => News::all(),
         ]);
     }
 }

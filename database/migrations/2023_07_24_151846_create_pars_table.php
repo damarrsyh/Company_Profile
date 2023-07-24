@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('pars', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->integer("total_member");
-            $table->decimal("total_equity", 15, 2);
+            $table->string("description");
+            $table->decimal("outstanding", 15, 2);
+            $table->integer("member");
+            $table->decimal("par", 15, 2);
+            $table->bigInteger("branch_id");
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('pars');
     }
 };

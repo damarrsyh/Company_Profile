@@ -23,10 +23,10 @@ use App\Http\Controllers\SummaryController;
 |
 */
 
-Route::get('/storage-link', function() {
-	$targetFolder = storage_path('app/public');
-	$linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
-	symlink($targetFolder,$linkFolder);
+Route::get('/storage-link', function () {
+    $targetFolder = storage_path('app/public');
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    symlink($targetFolder, $linkFolder);
 });
 
 
@@ -84,7 +84,8 @@ Route::prefix('news')->group(function () {
 });
 
 Route::prefix('branch')->group(function () {
-    Route::get('/index/{id}', [BranchController::class, 'index']);
+    Route::get('/index', [BranchController::class, 'index']);
+    Route::get('/{id}', [BranchController::class, 'show']);
     Route::get('/aindex', [BranchController::class, 'aindex'])->middleware('auth');
     Route::get('/create', [BranchController::class, 'create'])->middleware('auth');
     Route::post('/store', [BranchController::class, 'store']);
